@@ -1,4 +1,6 @@
-package linxdcn.api.modules.models.db.entity.geology;
+package linxdcn.api.modules.v1.models.db.entity.geology;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
 import java.util.List;
@@ -23,6 +25,7 @@ public class StrataSection {
     private String endMileage;
 
     @OneToMany(mappedBy = "strataSection",cascade = {CascadeType.ALL})
+    @JsonBackReference
     private List<Borehole> boreholes;
 
     public StrataSection() {

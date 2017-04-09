@@ -1,6 +1,6 @@
-package linxdcn.api.modules.models.db.entity.geology;
+package linxdcn.api.modules.v1.models.db.entity.geology;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
 import java.util.List;
@@ -26,7 +26,7 @@ public class Borehole {
 
     @ManyToOne
     @JoinColumn(name = "StratumSection")
-    @JsonIgnore
+    @JsonManagedReference
     private StrataSection strataSection;
 
     @Column(name ="SectionSequence")
@@ -51,6 +51,7 @@ public class Borehole {
     private double ycoordinate;
 
     @OneToMany(mappedBy = "borehole", cascade = {CascadeType.ALL})
+    @JsonManagedReference
     List<BoreholeStrataInfo> boreholeStrataInfoList;
 
     public Borehole() {

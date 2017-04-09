@@ -1,6 +1,6 @@
-package linxdcn.api.modules.models.db.entity.geology;
+package linxdcn.api.modules.v1.models.db.entity.geology;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
 
@@ -22,7 +22,7 @@ public class BoreholeStrataInfo {
 
     @ManyToOne
     @JoinColumn(name = "BoreholeID")
-    @JsonIgnore
+    @JsonBackReference
     private Borehole borehole;
 
     @ManyToOne

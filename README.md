@@ -1,10 +1,22 @@
 # iS3-Server
 
-## Configuration
+You can find the project from: https://github.com/linxdcn/iS3-Server
 
-1. Change `dev` of `spring.profiles.active=dev` in `src/main/resources/application.properties` file to the profile you want. Typically you can choose `dev`, `test` and `prod`
-2. Create files `application-dev.properties` and `application-prod.properties` referring to `application-test.properties`
-## How to run
-    mvn clean
-    mvn install
-    mvn spring-boot:run
+#### Prerequisites
+
+- Java 8
+- Maven > 3.0
+
+#### Configurations
+
+- Change profile in `src/main/resources/application.properties`
+- Create files `application-dev.properties` or `application-prod.properties`
+- Set your own configurations.
+
+#### Run and build
+
+Go on the project's root folder, then type:
+
+    $ mvn clean
+    $ mvn install
+    $ mvn spring-boot:run

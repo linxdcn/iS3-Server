@@ -1,6 +1,6 @@
-package linxdcn.api.modules.models.db.dao.geology;
+package linxdcn.api.modules.v1.models.db.dao.geology;
 
-import linxdcn.api.modules.models.db.entity.geology.Borehole;
+import linxdcn.api.modules.v1.models.db.entity.geology.Borehole;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**

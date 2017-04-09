@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorator="layout">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Home</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+</head>
+
+<body>
+<div class="container" layout:fragment="content">
+    <div class="textbody">
+        <h1>iS3-Server</h1>
+
+        <p>You can find the project from: https://github.com/linxdcn/iS3-Server</p>
+
+        <h4>Prerequisites</h4>
+
+        <ul>
+            <li>Java 8</li>
+            <li>Maven > 3.0</li>
+        </ul>
+
+
+        <h4>Configurations</h4>
+
+        <ul>
+            <li>Change profile in <code>src/main/resources/application.properties</code></li>
+            <li>Create files <code>application-dev.properties</code> or <code>application-prod.properties</code></li>
+            <li>Set your own configurations.</li>
+        </ul>
+
+
+        <h4>Run and build</h4>
+
+        <p>Go on the project's root folder, then type:</p>
+
+        <pre><code>$ mvn clean
+$ mvn install
+$ mvn spring-boot:run
+        </code></pre>
+    </div>
+</div>
+
+
+</body>
+
+</html>

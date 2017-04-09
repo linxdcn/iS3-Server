@@ -5,6 +5,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.context.annotation.Import;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
  * Created by linxiaodong on 4/2/17.

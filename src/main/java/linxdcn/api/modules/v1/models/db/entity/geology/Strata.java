@@ -1,4 +1,4 @@
-package linxdcn.api.modules.models.db.entity.geology;
+package linxdcn.api.modules.v1.models.db.entity.geology;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
