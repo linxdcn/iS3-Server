@@ -14,7 +14,17 @@ import springfox.documentation.annotations.ApiIgnore;
 @ApiIgnore
 public class HomeController {
     @RequestMapping("/")
+    public String index() {
+        return "index";
+    }
+
+    @RequestMapping("/home")
     public String home() {
         return "index";
+    }
+
+    @RequestMapping("/doc")
+    public String doc() {
+        return "api";
     }
 }

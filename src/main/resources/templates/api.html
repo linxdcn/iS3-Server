@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorator="layout">
+
+<head>
+    <meta charset="utf-8" />
+    <title>iS3-Server API</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../static/swagger/swagger-ui.css"
+          th:href="@{/swagger/swagger-ui.css}" />
+    <style>
+        html
+        {
+            box-sizing: border-box;
+            overflow: -moz-scrollbars-vertical;
+            overflow-y: scroll;
+        }
+        *,
+        *:before,
+        *:after
+        {
+            box-sizing: inherit;
+        }
+
+        #swagger-ui {
+            margin:0;
+        }
+
+        pre {
+            padding: 0px;
+            background-color: transparent;
+            border: transparent;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container" layout:fragment="content">
+
+    <div id="swagger-ui"></div>
+
+    <script src="../static/swagger/swagger-ui-bundle.js"
+            th:src="@{/swagger/swagger-ui-bundle.js}"></script>
+    <script src="../static/swagger/swagger-ui-standalone-preset.js"
+            th:src="@{/swagger/swagger-ui-standalone-preset.js}"></script>
+    <script>
+        window.onload = function() {
+
+            function HideTopbarPlugin() {
+                // this plugin overrides the Topbar component to return nothing
+                return {
+                    components: {
+                        Topbar: function() { return null }
+                    }
+                }
+            }
+
+            // Build a system
+            const ui = SwaggerUIBundle({
+                url: "v2/api-docs",
+                dom_id: '#swagger-ui',
+                presets: [
+                    SwaggerUIBundle.presets.apis,
+                    SwaggerUIStandalonePreset
+                ],
+                plugins: [
+                    SwaggerUIBundle.plugins.DownloadUrl,
+                    HideTopbarPlugin
+                ],
+                layout: "StandaloneLayout"
+            })
+
+            window.ui = ui
+        }
+    </script>
+</div>
+</body>
+
+</html>
