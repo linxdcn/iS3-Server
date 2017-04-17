@@ -8,4 +8,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
  */
 public interface BoreholeRepository extends JpaRepository<Borehole, Integer> {
     Borehole findById(int id);
+    Borehole findByName(String name);
 }

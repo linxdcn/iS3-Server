@@ -18,6 +18,7 @@ public class ApplicationSwaggerConfig {
     @Bean
     public Docket addUserDocket() {
         Docket docket = new Docket(DocumentationType.SWAGGER_2);
+        @SuppressWarnings("deprecation")
         ApiInfo apiInfo = new ApiInfo(
                 "iS3-Server Document API",
                 "API Document",

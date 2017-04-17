@@ -17,6 +17,12 @@ public class BoreholeStrataInfo {
     @Column(name = "StratumSequenceInBorehole")
     private int stratumSequenceInBorehole;
 
+    @Column(name = "StratumSectionID")
+    private int stratumSectionID;
+
+    @Column(name = "SectionSequenceBorhole")
+    private int sectionSequenceBorhole;
+
     @Column(name = "ElevationOfStratumBottom")
     private double elevationOfStratumBottom;
 

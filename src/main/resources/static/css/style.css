@@ -1,9 +1,7 @@
 body {
     padding-top: 60px;
 }
-.container {
-    width: 750px;
-}
 .textbody {
     line-height: 40px;
+    padding: 0px 35px;
 }
