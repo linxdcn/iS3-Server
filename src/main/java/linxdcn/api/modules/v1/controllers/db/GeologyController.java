@@ -1,4 +1,4 @@
-package linxdcn.api.modules.v1.controllers.db.geology;
+package linxdcn.api.modules.v1.controllers.db;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
@@ -30,6 +30,12 @@ public class GeologyController {
 
     @Autowired
     PhreaticWaterRepository phreaticWaterRepository;
+
+    @Autowired
+    RiverWaterRepository riverWaterRepository;
+
+    @Autowired
+    SoilPropertyRepository soilPropertyRepository;
 
     @ApiOperation(notes = "Get Borehole by ID", httpMethod = "GET", value = "Get by ID")
     @RequestMapping(value = "borehole/{id}", method = RequestMethod.GET)
@@ -65,5 +71,19 @@ public class GeologyController {
     @RequestMapping(value = "phreaticwater/{id}", method = RequestMethod.GET)
     public PhreaticWater getPhreaticWaterById(@PathVariable("id") int id) {
         return phreaticWaterRepository.findById(id);
+    }
+
+    @ApiOperation(notes = "Get River Water by ID", httpMethod = "GET", value = "Get by ID")
+    @RequestMapping(value = "riverwater/{id}", method = RequestMethod.GET)
+    public RiverWater getRiverWaterById(@PathVariable("id") int id) {
+        return riverWaterRepository.findById(id);
+    }
+
+    @ApiOperation(notes = "Get Soil Property by StratumSectionID and StratumID", httpMethod = "GET", value = "Get Soil Property")
+    @RequestMapping(value = "soilproperty", method = RequestMethod.GET)
+    public SoilProperty getByStratumSectionIDAndStratumID(
+            @RequestParam("section") int stratumSectionID,
+            @RequestParam("stratum") int stratumID) {
+        return soilPropertyRepository.findByStratumSectionIDAndStratumID(stratumSectionID, stratumID);
     }
 }
